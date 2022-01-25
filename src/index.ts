@@ -1,5 +1,5 @@
 import * as dotenv from "dotenv";
-import express from "express";
+import express, { Application } from "express";
 import cors from "cors";
 import helmet from "helmet";
 import logger from "morgan";
@@ -16,9 +16,9 @@ if (!process.env.PORT) {
  * App Variables
  */
 
-const PORT: number = parseInt(process.env.PORT as string, 10);
+export const PORT: number = parseInt(process.env.PORT as string, 10);
 
-export const app = express();
+const app: Application = express();
 
 /**
  *  App Configuration
@@ -35,6 +35,4 @@ app.use(logger("dev"));
 
 routes(app);
 
-app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`);
-});
+export default app;

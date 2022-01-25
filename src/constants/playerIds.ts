@@ -1,4 +1,4 @@
-import IPlayerId from "../src/interfaces/playerId.interface";
+import IPlayerId from "../interfaces/playerId.interface";
 
 const playerIds: IPlayerId = {
   DemarDerozan: 125,

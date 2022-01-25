@@ -8,7 +8,6 @@ RUN npm config set unsafe-perm true
 RUN npm install -g typescript
 RUN npm install -g ts-node
 RUN npm install -g husky
-RUN npm install -g morgan
 USER node
 RUN npm install
 COPY --chown=node:node . .

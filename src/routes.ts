@@ -1,6 +1,6 @@
 import { Express } from "express";
 
-import players from "../routes/players";
+import players from "./routes/players";
 
 import { errorHandler } from "./middleware/error.middleware";
 import { notFoundHandler } from "./middleware/not-found.middleware";

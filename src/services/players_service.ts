@@ -1,9 +1,9 @@
 import { Request, Response, NextFunction } from "express";
 import axios from "axios";
 
-import playerIds from "../constants/playerIds";
+import playerIds from "../../constants/playerIds";
 import IPLAYER_STATS from "../interfaces/playerStats.interface";
-import { BALL_DONT_LIE_URL } from "../constants";
+import { BALL_DONT_LIE_URL } from "../../constants";
 
 export const getPlayerSeasonAverage = async (
   req: Request,

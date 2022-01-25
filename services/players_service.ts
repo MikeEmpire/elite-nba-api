@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import axios from "axios";
 
 import playerIds from "../constants/playerIds";
+import IPLAYER_STATS from "../interfaces/playerStats.interface";
 import { BALL_DONT_LIE_URL } from "../constants";
 
 export const getPlayerSeasonAverage = async (
@@ -23,9 +24,11 @@ export const getPlayerSeasonAverage = async (
       season: 2021,
       player_ids: [player_id],
     };
-    const data = await axios.get(url, params);
+    const { data: outerData } = await axios.get(url, { params });
+    const { data }: { data: IPLAYER_STATS } = outerData;
     return res.status(200).send({ data, message: "Success" });
   } catch (err) {
+    console.log(err);
     return next(err);
   }
 };

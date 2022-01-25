@@ -1,8 +1,40 @@
-export class C {
-    private x = 10;
-    getX = () => this.x;
-    setX = (newVal: number) => { this.x = newVal; }
+import * as dotenv from "dotenv";
+import express from "express";
+import cors from "cors";
+import helmet from "helmet";
+import logger from "morgan";
+
+import routes from "./routes";
+
+dotenv.config();
+
+if (!process.env.PORT) {
+  process.exit(1);
 }
 
-export let x = new C();
-export let y = { ...{ some: "value" } };
+/**
+ * App Variables
+ */
+
+const PORT: number = parseInt(process.env.PORT as string, 10);
+
+const app = express();
+
+/**
+ *  App Configuration
+ */
+
+app.use(helmet());
+app.use(cors());
+app.use(express.json());
+app.use(logger("dev"));
+
+/**
+ * Server Activation
+ */
+
+routes(app);
+
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
+});

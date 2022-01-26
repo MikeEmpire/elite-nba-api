@@ -6,9 +6,9 @@ import { errorHandler } from "./middleware/error.middleware";
 import { notFoundHandler } from "./middleware/not-found.middleware";
 
 export default (app: Application) => {
-  app.use("/", (req: Request, res: Response, next: NextFunction) =>
-    res.status(200).send({ message: "hello" })
-  );
+  app.get("/", (_, res) => {
+    res.send("what it do");
+  });
 
   app.use("/api/players", players);
 

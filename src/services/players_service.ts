@@ -31,7 +31,6 @@ export const getPlayerSeasonAverage = async (
     const { data }: { data: IPLAYER_STATS } = outerData;
     return res.status(200).send({ data, player_image_url, message: "Success" });
   } catch (err) {
-    console.log(err);
     return next(err);
   }
 };

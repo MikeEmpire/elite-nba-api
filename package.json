@@ -10,7 +10,7 @@
     "start": "node lib/server.js",
     "build:types": "tsc --emitDeclarationOnly",
     "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
-    "test": "jest --detectOpenHandles",
+    "test": "jest",
     "test:watch": "jest --watch"
   },
   "devDependencies": {

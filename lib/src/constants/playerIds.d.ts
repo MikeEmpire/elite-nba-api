@@ -1,3 +1,3 @@
 import IPlayerId from "../interfaces/playerId.interface";
-declare const playerIds: IPlayerId;
-export default playerIds;
+export declare const playerIds: IPlayerId;
+export declare const NBA_JS_IDS: IPlayerId;

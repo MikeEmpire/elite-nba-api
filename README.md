@@ -1,283 +1,225 @@
-# TypeScript-Babel-Starter
+<div id="top"></div>
+<!--
+*** Thanks for checking out the Best-README-Template. If you have a suggestion
+*** that would make this better, please fork the repo and create a pull request
+*** or simply open an issue with the tag "enhancement".
+*** Don't forget to give the project a star!
+*** Thanks again! Now go create something AMAZING! :D
+-->
 
-# What is this?
 
-This is a small sample repository that uses Babel to transform TypeScript to plain JavaScript, and uses TypeScript for type-checking.
-This README will also explain step-by-step how you can set up this repository so you can understand how each component fits together.
 
-For simplicity, we've used `babel-cli` with a bare-bones TypeScript setup, but we'll also demonstrate integration with JSX/React, as well as adding bundlers into the mix.
-Specifically, we'll show off integration with Webpack for if you're deploying an application, and Rollup for if you're producing a library.
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
 
-# How do I use it?
 
-## Building the repo
 
-```sh
-npm run build
-```
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <!-- <a href="https://github.com/github_username/repo_name">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a> -->
 
-## Type-checking the repo
+<h3 align="center">Elite Media NBA API</h3>
 
-```sh
-npm run type-check
-```
+  <p align="center">
+    About The API
+    <br />
+    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="#">View Demo (Coming Soon)</a>
+    ·
+    <a href="https://github.com/MikeEmpire/elite-nba-api/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/MikeEmpire/elite-nba-api/issues">Request Feature</a>
+  </p>
+</div>
 
-And to run in `--watch` mode:
 
-```sh
-npm run type-check:watch
-```
 
-# How would I set this up myself?
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-## Install your dependencies
 
-Either run the following:
 
-```sh
-npm install --save-dev typescript @babel/core @babel/cli @babel/plugin-proposal-class-properties @babel/preset-env @babel/preset-typescript
-```
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-or make sure that you add the appropriate `"devDependencies"` entries to your `package.json` and run `npm install`:
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-```json
-"devDependencies": {
-    "@babel/cli": "^7.8.3",
-    "@babel/core": "^7.8.3",
-    "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/preset-env": "^7.8.3",
-    "@babel/preset-typescript": "^7.8.3",
-    "typescript": "^3.7.5"
-}
-```
+Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email`, `email_client`, `project_title`, `project_description`
 
-## Create your `tsconfig.json`
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-Then run
 
-```sh
-tsc --init --declaration --allowSyntheticDefaultImports --target esnext --outDir lib
-```
 
-**Note:** TypeScript also provides a `--declarationDir` option which specifies an output directory for generated declaration files (`.d.ts` files).
-For our uses where `--emitDeclarationOnly` is turned on, `--outDir` works equivalently.
+### Built With
 
-## Create your `.babelrc`
+* [Node.js](https://nextjs.org/)
+* [Express](https://expressjs.com/)
+* [Typescript](https://reactjs.org/)
+* [Commitlint](https://vuejs.org/)
+* [Jest](https://angular.io/)
 
-Then copy the `.babelrc` in this repo, or the below:
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-```json
-{
-    "presets": [
-      "@babel/preset-env",
-      "@babel/preset-typescript"
-    ],
-    "plugins": [
-      "@babel/plugin-proposal-class-properties"
-    ]
-}
-```
 
-## Set up your build tasks
 
-Add the following to the `"scripts"` section of your `package.json`
+<!-- GETTING STARTED -->
+## Getting Started
 
-```json
-"scripts": {
-    "type-check": "tsc --noEmit",
-    "type-check:watch": "npm run type-check -- --watch",
-    "build": "npm run build:types && npm run build:js",
-    "build:types": "tsc --emitDeclarationOnly",
-    "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline"
-}
-```
+This project is an express node.js API for aggregating stats and data from multiple NBA sources.
 
-# How do I change it?
+### Prerequisites
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
 
-## Using JSX (and React)
-> Full example available [**here**](https://github.com/a-tarasyuk/react-webpack-typescript-babel)
+### Installation
 
-### Install your dependencies
+1. Clone the repo
+   ```sh
+   git clone https://github.com/MikeEmpire/elite-nba-api.git
+   ```
+2. Install NPM packages
+   ```sh
+   yarn install
+   ```
+   or
+   ```sh
+   npm install
+   ```
 
-Install the [@babel/preset-react](https://www.npmjs.com/package/@babel/preset-react) package as well as React, ReactDOM, and their respective type declarations
+3. Enter your API in `config.js`
+   ```sh
+   npm run dev
+   ```
 
-```sh
-npm install --save react react-dom @types/react @types/react-dom
-npm install --save-dev @babel/preset-react
-```
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### Update `.babelrc`
 
-Then add `"@babel/react"` as one of the presets in your `.babelrc`.
 
-### Update `tsconfig.json`
+<!-- USAGE EXAMPLES -->
+## Usage
 
-Update your `tsconfig.json` to set `"jsx"` to `"react"`.
-
-### Use a `.tsx` file
-
-Make sure that any files that contain JSX use the `.tsx` extension.
-To get going quickly, just rename `src/index.ts` to `src/index.tsx`, and add the following lines to the bottom:
-
-```ts
-import React from 'react';
-export let z = <div>Hello world!</div>;
-```
-
-## Using Webpack
-
-> Full example available [**here**](https://github.com/a-tarasyuk/webpack-typescript-babel)
-
-### Install your dependencies
-
-```sh
-npm install --save-dev webpack webpack-cli babel-loader
-```
-
-### Create a `webpack.config.js`
-
-Create a `webpack.config.js` at the root of this project with the following contents:
-
-```js
-var path = require('path');
-
-module.exports = {
-    // Change to your "entry-point".
-    entry: './src/index',
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'app.bundle.js'
-    },
-    resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.json']
-    },
-    module: {
-        rules: [{
-            // Include ts, tsx, js, and jsx files.
-            test: /\.(ts|js)x?$/,
-            exclude: /node_modules/,
-            loader: 'babel-loader',
-        }],
-    }
-};
-```
-
-### Create a build task
-
-Add
-
-```json
-"bundle": "webpack"
-```
-
-to the `scripts` section in your `package.json`.
-
-### Run the build task
+After starting your local server, you can use end points such as 
 
 ```sh
-npm run bundle
+/api/players?LebronJames
 ```
 
-## Using Rollup
+to retrieve data from the API
 
-> Full example available [**here**](https://github.com/a-tarasyuk/rollup-typescript-babel)
+_For more examples, please refer to the [Documentation](https://example.com)_
 
-### Install your dependencies
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-```sh
-npm install --save-dev rollup @rollup/plugin-babel @rollup/plugin-node-resolve @rollup/plugin-commonjs
-```
 
-### Create a `rollup.config.js`
 
-Create a `rollup.config.js` at the root of this project with the following contents:
+<!-- ROADMAP -->
+## Roadmap
 
-```js
-import commonjs from '@rollup/plugin-commonjs';
-import resolve from '@rollup/plugin-node-resolve';
-import babel from '@rollup/plugin-babel';
-import pkg from './package.json';
+COMING SOON!
 
-const extensions = [
-  '.js', '.jsx', '.ts', '.tsx',
-];
+See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
 
-const name = 'RollupTypeScriptBabel';
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-export default {
-  input: './src/index.ts',
 
-  // Specify here external modules which you don't want to include in your bundle (for instance: 'lodash', 'moment' etc.)
-  // https://rollupjs.org/guide/en#external-e-external
-  external: [],
 
-  plugins: [
-    // Allows node_modules resolution
-    resolve({ extensions }),
+<!-- CONTRIBUTING -->
+## Contributing
 
-    // Allow bundling cjs modules. Rollup doesn't understand cjs
-    commonjs(),
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-    // Compile TypeScript/JavaScript files
-    babel({ extensions, include: ['src/**/*'] }),
-  ],
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
 
-  output: [{
-    file: pkg.main,
-    format: 'cjs',
-  }, {
-    file: pkg.module,
-    format: 'es',
-  }, {
-    file: pkg.browser,
-    format: 'iife',
-    name,
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-    // https://rollupjs.org/guide/en#output-globals-g-globals
-    globals: {},
-  }],
-};
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-```
 
-### Create a build task
 
-Add
+<!-- LICENSE -->
+## License
 
-```json
-"bundle": "rollup -c"
-```
+Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-to the `scripts` section in your `package.json`.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### Run the build task
 
-```sh
-npm run bundle
-```
 
-## Using NodeJS
+<!-- CONTACT -->
+## Contact
 
-> Full example available [**here**](https://github.com/it-efrem/NodeJS-TypeScript-Babel)
+Your Name - [@iMikeOlie](https://twitter.com/imikeolie) - aolie94@gmail.com
 
-### Install your dependencies
+Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
 
-```sh
-npm install --save-dev @babel/core @babel/node @babel/plugin-proposal-class-properties @babel/preset-env @babel/preset-typescript typescript
-```
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### Create a start task
 
-Add
 
-```json
-"start": "babel-node -x \".ts\" src/index.ts"
-```
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
 
-to the `scripts` section in your `package.json`.
+* [Dylan](#)
+* [Dylan]()
+* [Dylan]()
 
-### Run the start task
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-```sh
-npm run start
-```
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
+[contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
+[forks-url]: https://github.com/github_username/repo_name/network/members
+[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
+[stars-url]: https://github.com/github_username/repo_name/stargazers
+[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
+[issues-url]: https://github.com/github_username/repo_name/issues
+[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
+[license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/linkedin_username
+[product-screenshot]: images/screenshot.png

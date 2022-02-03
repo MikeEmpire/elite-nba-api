@@ -5,6 +5,7 @@ import { playerIds, NBA_JS_IDS } from "../constants/playerIds";
 import IPLAYER_STATS from "../interfaces/playerStats.interface";
 import { BALL_DONT_LIE_URL } from "../constants";
 import getPlayerImageUrl from "../common/get-player-image-url";
+import IALL_PLAYERS from "../interfaces/allPlayersResponse.interface";
 
 export const getPlayerSeasonAverage = async (
   req: Request,
@@ -30,6 +31,22 @@ export const getPlayerSeasonAverage = async (
     const { data: outerData } = await axios.get(url, { params });
     const { data }: { data: IPLAYER_STATS } = outerData;
     return res.status(200).send({ data, player_image_url, message: "Success" });
+  } catch (err) {
+    return next(err);
+  }
+};
+
+export const getAllPlayers = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const url: string =
+      "http://data.nba.net/data/10s/prod/v1/2021/players.json";
+    const { data }: { data: IALL_PLAYERS } = await axios.get(url);
+    const { standard: players } = data.league;
+    return res.status(200).send({ players, message: "Success" });
   } catch (err) {
     return next(err);
   }

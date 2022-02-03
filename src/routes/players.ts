@@ -1,9 +1,14 @@
 import express from "express";
 
-import { getPlayerSeasonAverage } from "../services/players_service";
+import {
+  getAllPlayers,
+  getPlayerSeasonAverage,
+} from "../services/players_service";
 
 const router = express.Router();
 
 router.get("/", getPlayerSeasonAverage);
+
+router.get("/all", getAllPlayers);
 
 export default router;

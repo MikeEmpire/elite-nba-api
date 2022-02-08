@@ -1,5 +1,5 @@
 import IPLAYER_DATA from "./playerData.interface";
-interface INTERNAL_META {
+export interface INTERNAL_META {
     pubDateTime?: String;
     igorPath?: String;
     xslt?: String;

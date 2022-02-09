@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import axios from "axios";
-import cheerio from "cheerio";
+import cheerio, { Cheerio } from "cheerio";
 import requestP from "request-promise";
 
 import { NBA_JS_IDS } from "../constants/playerIds";
@@ -113,7 +113,7 @@ export const gameLastTenGameStats = async (
         TO: "",
         "+/-": "",
       };
-      $(_rows).each((index, e) => {
+      $(_rows).each((index, e): void => {
         const objKey: string = headers[index];
         const _cheerioText: string = $(e).text().replace(/\s\s+/g, " ").trim();
         const _text: string = sanitizeTableText(_cheerioText);

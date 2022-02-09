@@ -23,8 +23,10 @@ export const getPlayerSeasonAverage = async (
     const player_image_url: string = getPlayerImageUrl(nba_js_id);
     const url: string = `http://data.nba.net/prod/v1/2021/players/${nba_js_id}_profile.json`;
     const { data: outerData } = await axios.get(url);
-    const { league: data }: { league: IPLAYER_STATS } = outerData;
-    return res.status(200).send({ data, player_image_url, message: "Success" });
+    const { stats }: { stats: IPLAYER_STATS } = outerData.league.standard;
+    return res
+      .status(200)
+      .send({ stats, player_image_url, message: "Success" });
   } catch (err) {
     return next(err);
   }

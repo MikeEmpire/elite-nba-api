@@ -146,17 +146,8 @@ interface LATEST_STATS {
   td3: String;
 }
 
-interface PLAYER_STATS {
+export default interface PLAYER_STATS {
   latest: LATEST_STATS;
   careerSummary: CAREER_STATS;
   regularSeason: REGULAR_SEASON;
-}
-
-interface ISTANDARD_STATS {
-  teamId: String;
-  stats: PLAYER_STATS;
-}
-
-export default interface IPLAYER_STATS {
-  standard: ISTANDARD_STATS;
 }

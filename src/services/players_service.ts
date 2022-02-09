@@ -14,7 +14,14 @@ export const getPlayerSeasonAverage = async (
   try {
     const pName = req.query.player_name as string;
 
-    const nba_js_id: Number = NBA_JS_IDS[pName.toLowerCase()];
+    const nba_js_id: Number =
+      NBA_JS_IDS[
+        pName
+          .trim()
+          .replace(/[^a-zA-Z ]/g, "")
+          .replace(/\s+/g, "")
+          .toLowerCase()
+      ];
     if (!nba_js_id) {
       return res
         .status(500)

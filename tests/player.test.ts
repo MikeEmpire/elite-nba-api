@@ -8,10 +8,16 @@ describe("Able to get player data from API", () => {
     const PATH: string = `/api/players?player_name=LebronJames`;
     const result = await request(app).get(PATH).send();
     expect(result.status).toBe(200);
-    expect(result.body.data[0]).toHaveProperty("ast");
+    expect(result.body.stats.latest).toHaveProperty("ppg");
     expect(result.body.player_image_url).toBe(lebronURL);
   });
-  return it("Able to get all stats", async (): Promise<void> => {
+  it("Able to get Lebron's game log", async (): Promise<void> => {
+    const url: string = "/api/players/gamelog?first_name=Lebron&last_name=James";
+    const result = await request(app).get(url);
+    expect(result.status).toBe(200);
+    expect(result.body.gamelog[0]).toHaveProperty("date");
+  });
+  return it("Able to get all players", async (): Promise<void> => {
     const url: string = "/api/players/all";
     const result = await request(app).get(url);
     expect(result.status).toBe(200);

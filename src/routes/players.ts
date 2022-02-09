@@ -12,6 +12,6 @@ router.get("/", getPlayerSeasonAverage);
 
 router.get("/all", getAllPlayers);
 
-router.get("/lastTenGames", gameLastTenGameStats);
+router.get("/gamelog", gameLastTenGameStats);
 
 export default router;

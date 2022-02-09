@@ -10,6 +10,7 @@ import IALL_PLAYERS from "../interfaces/allPlayersResponse.interface";
 import IGAME_LOG_STATS from "../interfaces/gameLogStats.interface";
 import sanitizeQueryString from "../common/sanitize-query-string";
 import sanitizeTableText from "../common/sanitize-table-text";
+import genFoxUrl from "../common/gen-fox-url";
 
 export const getPlayerSeasonAverage = async (
   req: Request,
@@ -68,7 +69,7 @@ export const gameLastTenGameStats = async (
     }
     const fName = sanitizeQueryString(firstName);
     const lName = sanitizeQueryString(lastName);
-    const url: string = `https://www.foxsports.com/nba/${fName}-${lName}-player-game-log?season=2021&seasonType=reg`;
+    const url: string = genFoxUrl(fName, lName);
     const cheerioRes = await requestP.get(url);
     const $ = cheerio.load(cheerioRes);
     const games: IGAME_LOG_STATS[] = [];
@@ -123,7 +124,7 @@ export const gameLastTenGameStats = async (
       });
       games.push(dataObj);
     });
-    return res.status(200).send({ game_log: games, message: "Success" });
+    return res.status(200).send({ gamelog: games, message: "Success" });
   } catch (err) {
     return next(err);
   }

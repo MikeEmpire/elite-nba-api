@@ -4,15 +4,15 @@ export default interface IGAME_LOG_STATS {
     min?: string;
     pts?: string;
     fg?: string;
-    "3fg"?: string;
+    threeFg?: string;
     ft?: string;
-    OffReb?: string;
-    DefReb?: string;
-    Reb?: string;
-    Ast?: string;
-    Stl?: string;
-    Blk?: string;
-    PF?: string;
-    TO?: string;
-    "+/-"?: string;
+    offReb?: string;
+    defReb?: string;
+    reb?: string;
+    ast?: string;
+    stl?: string;
+    blk?: string;
+    pf?: string;
+    to?: string;
+    plusMinus?: string;
 }

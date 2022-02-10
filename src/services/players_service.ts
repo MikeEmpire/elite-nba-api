@@ -89,7 +89,7 @@ export const gameLastTenGameStats = async (
       "Blk",
       "PF",
       "TO",
-      "+/-",
+      "plusMinus",
     ];
     const _tableSelector =
       "#__layout > div > div.fscom-main-content > div.gamelog-full > div.table-wrapper-container.bifrost-table.carousel-wrapper > div.table-wrapper.carousel-container.table-carousel > div > table > tbody > tr";
@@ -101,17 +101,17 @@ export const gameLastTenGameStats = async (
         min: "",
         pts: "",
         fg: "",
-        "3fg": "",
+        threeFg: "",
         ft: "",
-        OffReb: "",
-        DefReb: "",
-        Reb: "",
-        Ast: "",
-        Stl: "",
-        Blk: "",
-        PF: "",
-        TO: "",
-        "+/-": "",
+        offReb: "",
+        defReb: "",
+        reb: "",
+        ast: "",
+        stl: "",
+        blk: "",
+        pf: "",
+        to: "",
+        plusMinus: "",
       };
       $(_rows).each((index, e): void => {
         const objKey: string = headers[index];

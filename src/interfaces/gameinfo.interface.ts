@@ -32,7 +32,11 @@ interface BROADCAST_STREAM {
   isOnAir?: Boolean;
   streamId?: String;
 }
-
+interface TEAM_ADDITIONAL_INFO {
+  nickname: String;
+  fullName: String;
+  confName: String;
+}
 interface TEAM {
   teamId: String;
   triCode: String;
@@ -41,6 +45,7 @@ interface TEAM {
   seriesWin: String;
   seriesLoss: String;
   score: String;
+  additionalInfo?: TEAM_ADDITIONAL_INFO;
   linescore: Array<any>;
 }
 

@@ -25,7 +25,7 @@ export const getTodaysGames = async (
       dataCopy.games[i].vTeam.additionalInfo = vAdditionalInfo;
       dataCopy.games[i].hTeam.additionalInfo = hAdditionalInfo;
     }
-    return res.status(200).send({ data, message: "Hit!" });
+    return res.status(200).send({ data: dataCopy, message: "Hit!" });
   } catch (err) {
     return next(err);
   }

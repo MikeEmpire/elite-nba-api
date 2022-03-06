@@ -101,7 +101,7 @@ export const TEAM_HASHMAP: any = {
     confName: "West",
   },
   "1610612757": {
-    nickname: "Trail Blazers",
+    nickname: "TrailBlazers",
     fullName: "Portland Trail Blazers",
     confName: "West",
   },

@@ -4,6 +4,7 @@ import { Response, Request, NextFunction } from "express";
 import getTodaysDate from "../common/get-todays-date";
 import { TEAM_HASHMAP } from "../constants";
 import IGAME_DATA from "../interfaces/gameinfo.interface";
+import SCHEDULE_RESPONSE from "../interfaces/nbaGameInfo.interface";
 
 export const getTodaysGames = async (
   req: Request,
@@ -26,6 +27,21 @@ export const getTodaysGames = async (
       dataCopy.games[i].hTeam.additionalInfo = hAdditionalInfo;
     }
     return res.status(200).send({ data: dataCopy, message: "Hit!" });
+  } catch (err) {
+    return next(err);
+  }
+};
+
+export const gameTodaysGamesV2 = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const url = `https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json`;
+    const { data }: { data: SCHEDULE_RESPONSE } = await axios.get(url);
+    const { games } = data.scoreboard;
+    return res.status(200).send({ games });
   } catch (err) {
     return next(err);
   }

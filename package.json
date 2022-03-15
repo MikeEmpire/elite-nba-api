@@ -1,6 +1,6 @@
 {
   "name": "elite-nba-api",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev --respawn --pretty --transpile-only src/server.ts",

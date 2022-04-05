@@ -1,0 +1,56 @@
+interface SORT_KEY {
+    name: Number;
+    pos: Number;
+    points: Number;
+    min: Number;
+    fgp: Number;
+    fga: Number;
+    fgm: Number;
+    ftm: Number;
+    ftp: Number;
+    tpm: Number;
+    tpa: Number;
+    tpp: Number;
+    offReb: Number;
+    defReb: Number;
+    totReb: Number;
+    assists: Number;
+    pFouls: Number;
+    steals: Number;
+    turnovers: Number;
+    blocks: Number;
+    plusMinus: Number;
+}
+export default interface ACTIVE_PLAYER {
+    personId: String;
+    firstName: String;
+    lastName: String;
+    jersey: String;
+    teamId: String;
+    isOnCourt: Boolean;
+    points: String;
+    pos: String;
+    position_full: String;
+    player_code: String;
+    min: String;
+    fgm: String;
+    fga: String;
+    fgp: String;
+    ftm: String;
+    fta: String;
+    ftp: String;
+    tpm: String;
+    tpa: String;
+    tpp: String;
+    offReb: String;
+    defReb: String;
+    assists: String;
+    pFouls: String;
+    steals: String;
+    turnovers: String;
+    blocks: String;
+    plusMinus: String;
+    dnp: String;
+    sortKey: SORT_KEY;
+}
+export {};

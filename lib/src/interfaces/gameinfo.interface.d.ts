@@ -100,7 +100,7 @@ interface BROADCAST {
 interface WATCH {
     broadcast: BROADCAST;
 }
-interface GAME_INFO {
+export interface GAME_INFO {
     seasonStageId: Number;
     seasonYear: String;
     leagueName: String;
@@ -133,7 +133,7 @@ interface GAME_INFO {
     hTeam: TEAM;
     watch: WATCH;
 }
-interface INTERNAL_GAME_DATA_INTERFACE {
+export interface INTERNAL_GAME_DATA_INTERFACE {
     pubDateTime: String;
     igorPath: String;
     xslt: String;

@@ -58,7 +58,6 @@ export const getGameStats = async (
   next: NextFunction
 ) => {
   try {
-    let gameStatus: String = "";
     const { date, code } = req.query;
     const url = `https://data.nba.net/10s/prod/v1/${date}/${code}_boxscore.json`;
     return axios.get(url).then((schedule) => {
@@ -71,7 +70,8 @@ export const getGameStats = async (
       if (gamePeriod !== 0) {
         const expandedUrl = `https://cdn.nba.com/static/json/liveData/boxscore/boxscore_${code}.json`;
         return axios.get(expandedUrl).then((boxscore) => {
-          return res.status(200).send({ basicData: gameData, boxscore });
+          const data = boxscore.data.game;
+          return res.status(200).send({ basicData: gameData, gameInfo: data });
         });
       }
 
